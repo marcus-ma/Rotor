@@ -94,25 +94,25 @@ rotor根目录下有4个文件目录和2个文件，分别为app，core，libs�
 ``` php  
     <?php  
     $route->get('rotor',function(){
-    echo "get i am rotor";
-});
+      echo "get i am rotor";
+   });
   
 ```  
 有时我们需要在路由中捕获 URI 片段。比如，要从 URL 中捕获用户ID，需要通过如下方式定义路由参数：
 ``` php  
     <?php  
-$route->post('login',function($id = 123){
-    echo "the user id  is {$id}";
-});
+      $route->post('login',function($id = 123){
+         echo "the user id  is {$id}";
+      });
   
 ```  
 对于指定的路由执行相对的业务逻辑方法如下：
 ``` php  
     <?php  
     //当接收到post请求hello资源时，执行Service下的Index业务类的hello方法
-$route->post('hello',function(){
-    \app\Service\Index::getInstance()->hello();
-});
+      $route->post('hello',function(){
+         \app\Service\Index::getInstance()->hello();
+      });
 ```  
 请求的路由方式主要为4种：get、post、delete、put，这对应了Restful风格的4种请求状态，详细可以查询相关资料进行了解。
 </br>
@@ -121,8 +121,8 @@ $route->post('hello',function(){
 最基本的业务类格式如下：（Index模块类为例子）
 ``` php  
     <?php  
-namespace app\Service;
-class Index
+   namespace app\Service;
+   class Index
 {
     private static $_instance = null;//该类中的唯一一个实例
     private function __construct(){//防止在外部实例化该类
