@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="rotorSPA"></div>
+</body>
+<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+<script>
+    (function () {
+        $.ajax({
+            type: 'POST',
+            url: 'hello',
+            data:{'key':'hello'},
+            success: function(data){
+                $("#rotorSPA").html(data);
+            },
+            error:function(data) {
+                console.log(data);
+            }
+        });
+    }())
+
+</script>
+</html>

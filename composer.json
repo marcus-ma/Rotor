@@ -1,0 +1,17 @@
+{
+  "name":"rotor",
+  "description":"A simple PHP micro framework for SPA Develop",
+  "type":"Framework",
+  "keyword":[
+    "PHP","PHP Framework","SPA","Restful API"
+  ],
+  "require": {
+    "php":">=5.3.0"
+  },
+  "repositories":{
+    "packagist":{
+      "type":"composer",
+      "url":"https://packagist.phpcomposer.com"
+    }
+  }
+}
