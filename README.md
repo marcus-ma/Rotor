@@ -195,6 +195,3 @@ class Index
    
   
 调用前得先引入app目录下的config文件夹里的DBware类文件(use config/DBware)。  
-
-# Rotor使用手册 MSR (M:自定义模型层；S:业务逻辑层；R:自定义路由入口层)
-(修补了输入过滤的bug、新增Route类文件用于支持restfulAPI编写，新增装饰器模式)
