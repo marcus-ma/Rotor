@@ -5,9 +5,9 @@
 
 ## #0简介
 
-- rotor--一个为中小型SPA应用提供Restful API的MSR型PHP微框架。(MSR M:自定义模型层；S:业务逻辑层；R:自定义路由入口层)<br><br>
+- rotor--一个为中小型SPA应用提供Restful API的MSR型PHP微框架。(MSR M:模型层；S:业务逻辑层；R:路由分发层)<br><br>
 
-- rotor并不算是真正的框架，意义上来说用“PHP目录骨架”来描述会更合适。<br><br>
+- rotor并不算是真正的框架，意义上来说用“PHP项目脚手架”来描述会更合适。<br><br>
 
 - rotor适合那些有原生PHP基础，却对TP，YII，laravel等MVC框架开发模式不熟悉的开发者。它友好地提供一个文件规范、代码逻辑易维护、类MVC模式的目录架构，使初级开发者在做项目时可以抛弃页面功能逻辑与页面布局样式耦合的开发模式，减少开发和维护成本，且熟悉这种开发模式之后，可以迅速上手MVC框架。
 
@@ -120,10 +120,10 @@ rotor根目录下有4个文件目录和2个文件，分别为app，core，libs�
 ### 5.业务类
 最基本的业务类格式如下：（Index模块类为例子）
 ``` php  
-    <?php  
-   namespace app\Service;
-   class Index
-{
+<?php  
+namespace app\Service;
+    class Index
+   {
     private static $_instance = null;//该类中的唯一一个实例
     private function __construct(){//防止在外部实例化该类
     }
@@ -155,6 +155,7 @@ rotor根目录下有4个文件目录和2个文件，分别为app，core，libs�
       ##增  
 ``` php  
     <?php  
+    $db=DBware::connDB(); 
     $a = [  
                     "username" => 'nero',  
                     "click_num" => 45  
@@ -166,11 +167,13 @@ rotor根目录下有4个文件目录和2个文件，分别为app，core，libs�
   ###删  
   ``` php  
     <?php  
+    $db=DBware::connDB(); 
     $db->form('表名')->where('username="der"')->delete(); 
 ```  
 ###改  
   ``` php  
-    <?php  
+    <?php 
+    $db=DBware::connDB(); 
     $a = [  
                     'username' => 'marcus',  
                     "click_num" => 45  
@@ -179,7 +182,8 @@ rotor根目录下有4个文件目录和2个文件，分别为app，core，libs�
 ```  
   ###查  
   ``` php  
-    <?php  
+    <?php 
+    $db=DBware::connDB(); 
     //返回对象集  
     $a=$db->form("表名")->where('id=1')->select();  
     echo $a->click_num;
